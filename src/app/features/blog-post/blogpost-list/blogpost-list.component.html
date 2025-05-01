@@ -13,6 +13,7 @@
             <th>Title</th>
             <th>shortdescription</th>
             <th>Is Visible?</th>
+            <th>Categories</th>
         </tr>
     </thead>
     <tbody>
@@ -20,6 +21,12 @@
           <td>{{BlogPost.title}}</td>
           <td>{{BlogPost.shortDescription}}</td>
           <td>{{BlogPost.isVisible}}</td>
+          <td>
+            <span  *ngFor="let category of BlogPost.categories">
+                <span class="badge bg-secondary me-2">{{category.name}}</span>
+            </span>
+            
+          </td>
         </tr>
     </tbody>
 </table>
