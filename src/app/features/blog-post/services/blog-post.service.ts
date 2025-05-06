@@ -29,4 +29,8 @@ updateBlogPost(id :string ,updateblogbost:UpdateBlogPost): Observable<BlogPost>{
 return this.http.put<BlogPost>(`${environment.apibaseUrl}/api/blogposts/${id}`,updateblogbost)
 }
 
+deleteBlogPost(id:string):Observable<BlogPost>{
+  return this.http.delete<BlogPost>(`${environment.apibaseUrl}/api/blogposts/${id}`);
+}
+
 }
