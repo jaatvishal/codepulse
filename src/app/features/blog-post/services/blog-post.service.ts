@@ -24,7 +24,9 @@ return this.http.post<BlogPost>(`${environment.apibaseUrl}/api/blogposts`,data);
   getBlogPostById(id:string): Observable<BlogPost>{
     return this.http.get<BlogPost>(`${environment.apibaseUrl}/api/blogposts/${id}`);
   }
-
+getBlogPostByUrlHandle(urlHandle:string): Observable<BlogPost>{
+    return this.http.get<BlogPost>(`${environment.apibaseUrl}/api/blogposts/${urlHandle}`);
+  }
 updateBlogPost(id :string ,updateblogbost:UpdateBlogPost): Observable<BlogPost>{
 return this.http.put<BlogPost>(`${environment.apibaseUrl}/api/blogposts/${id}`,updateblogbost)
 }
@@ -32,5 +34,6 @@ return this.http.put<BlogPost>(`${environment.apibaseUrl}/api/blogposts/${id}`,u
 deleteBlogPost(id:string):Observable<BlogPost>{
   return this.http.delete<BlogPost>(`${environment.apibaseUrl}/api/blogposts/${id}`);
 }
+
 
 }
